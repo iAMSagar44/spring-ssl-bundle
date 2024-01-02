@@ -27,4 +27,12 @@ public class ClientService {
                 .body(new ParameterizedTypeReference<List<Movie>>() {});
 
     }
+
+    public List<Movie> retrieveMovieListWithDelay(int delay){
+        return restClient.get()
+                .uri("/movies/delay/" + delay)
+                .retrieve()
+                .body(new ParameterizedTypeReference<List<Movie>>() {});
+
+    }
 }
